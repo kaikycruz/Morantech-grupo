@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador Financeiro - MoranTech</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="titulo">Bem-vindo(a) à Morantech!</h1>
+      <div class="paragrafos">
+        <p>
+          Como sabemos, um dos principais fatores para o desperdício/perda do
+          morango é a falta do controle e monitoramento de temperatura e umidade
+          da fruta.
+        </p>
+        Esse desperdício gira em torno de 30% da quantidade total.
+        <p>
+          O objetivo da Morantech é reduzir esse desperdício a 5% e aumentar os
+          ganhos de sua empresa.
+          <br />
+        </p>
+      </div>
+
+      <h2>Simule aqui os seus resultados com e sem a MoranTech</h2>
+
+      <div>
+        Quantos<b> Kg</b> de morangos serão transportados em um caminhão?
+        <input id="input_qtdMorangos" /><br />
+        Digite o valor pelo <b>Kg</b> do morango:
+        <input id="input_valorMorango" /><br />
+        <button onclick="simule()" class="botao">clique e simule</button>
+      </div>
+      <p id="p_respostas"></p>
+    </div>
+  </body>
+</html>
+
+<script>
+  function simule() {
+    var qtdM = Number(input_qtdMorangos.value);
+
+    var valorMorango = Number(input_valorMorango.value);
+
+    var custoTotal = qtdM * valorMorango;
+    var perdaTotal = custoTotal * 0.3;
+
+    var custo = custoTotal - perdaTotal;
+
+    var perdaComMoran = custoTotal * 0.05;
+    var custoMoran = custoTotal - perdaComMoran;
+
+    var retorno = perdaTotal - perdaComMoran;
+
+    if (qtdM <= 0) {
+      alert("Por favor digite um número válido!");
+    }
+    if (qtdM > 0) {
+      p_respostas.innerHTML = `Com o uso de nossa tecnologia nosso cliente ao invés de faturar R$${custo} por caminhão, passaria a receber R$${custoMoran}, tendo assim um lucro de R$${retorno}. `;
+    }
+  }
+</script>
