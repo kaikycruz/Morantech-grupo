@@ -6,19 +6,21 @@
 
 .botao {
     font-size: medium;
-    height: 35px;
+    height: 45px;
+    width: 15%;
 }
 
 
 .container {
     font-family: 'Rubik', sans-serif;
+    font-size: large;
 }
 
 
 .caixa1, .caixa2 {
-    width: 250px;
+    width: 350px;
     height: 50px;
-    background-color: #f8f8f8;
+    background-color: #ffcaca;
   }
 
   .resultado {
@@ -30,5 +32,5 @@
   }
 
   body {
-    background-color: #f7f7f7;
+    background-color: #ffcaca;
   }
